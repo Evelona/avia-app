@@ -1,16 +1,23 @@
 import { Ticket } from "./Ticket";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-export const TicketsList = ({ compainFilter }) => {
+export const TicketsList = () => {
   const allTickets = useSelector((state) => state.tickets);
-  const compains = useSelector((state) => state.compains);
-  let tickets = [];
+  const filters = useSelector((state) => state.filters);
 
-  //   useEffect({
-  //       if (compainFilter !== 'all') tickets = allTickets.filter(ticket => ticket)
+  const [tickets, setTickets] = useState(allTickets);
 
-  //   }, [compainFilter]);
+  useEffect(() => {
+    let sortedTickets = allTickets;
+
+    if (filters.compainFilter)
+      sortedTickets = sortedTickets.filter(
+        (tickets) => tickets.companyId === filters.compainFilter
+      );
+
+    setTickets(sortedTickets);
+  }, [filters]);
   return (
     <>
       {tickets.map((ticket) => (

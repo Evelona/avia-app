@@ -1,7 +1,15 @@
 import style from "./style.module.scss";
-export const CompainFilter = ({ setCompainFilter }) => {
+import { setcompainFilterValue } from "../../store/compainFilter";
+import { useDispatch, useSelector } from "react-redux";
+
+export const CompainFilter = () => {
+  const dispatch = useDispatch();
+  const compains = useSelector((state) => state.compains);
   const onChange = ({ target: { value } }) => {
-    setCompainFilter(value);
+    const currCompainId =
+      compains.find((compains) => compains.name === value)?.id || "";
+    console.log(currCompainId);
+    dispatch(setcompainFilterValue(currCompainId));
   };
   return (
     <div className={style.block}>
