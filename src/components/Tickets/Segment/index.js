@@ -3,8 +3,7 @@ import segments from "../../../assets/data/segments.json";
 
 const getTime = (time) => new Date(time).toLocaleTimeString().slice(0, -3);
 
-export const Segment = (props) => {
-  const { id } = props;
+export const Segment = ({ id }) => {
   const segment = segments.find((segment) => segment.id === id);
   return (
     <div className={style.segment}>
