@@ -24,12 +24,12 @@ export const TransferFilter = () => {
 
       <label className={style.check}>
         <input name="all" type="checkbox" className={style.check__input} />
-        <span className={style.check__box}></span>2 пересадка
+        <span className={style.check__box}></span>2 пересадки
       </label>
 
       <label className={style.check}>
         <input name="all" type="checkbox" className={style.check__input} />
-        <span className={style.check__box}></span>3 пересадка
+        <span className={style.check__box}></span>3 пересадки
       </label>
     </div>
   );

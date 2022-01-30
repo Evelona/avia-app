@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { PlainIcon } from "../../assets/icons";
 import { CompainFilter } from "../../components/CompainFilter";
 import { CostFilter } from "../../components/CostFilter";

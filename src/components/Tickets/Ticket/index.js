@@ -5,7 +5,6 @@ import style from "./style.module.scss";
 export const Ticket = ({ ticket }) => {
   const { companyId, segments, price } = ticket;
 
-  console.log(companyId);
   return (
     <div className={style.ticket}>
       <div className={style.ticket__header}>
