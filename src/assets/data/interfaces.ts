@@ -1,5 +1,5 @@
 // сам билет, включает в себя остальные сущности
-interface Ticket {
+export interface Ticket {
   id: string;
   // Цена в рублях
   price: number;
@@ -10,10 +10,22 @@ interface Ticket {
 }
 
 // Список кодов городов. Мы в каждом билете будем лететь с MOW в EKT
-type CityCodes = 'MOW' | 'HKT' | 'HKG' | 'JNB' | 'PTB' | 'ARH' | 'TRN' | 'KRS' | 'SRT' | 'LOS' | 'EKV' | 'EKT';
+export type CityCodes =
+  | "MOW"
+  | "HKT"
+  | "HKG"
+  | "JNB"
+  | "PTB"
+  | "ARH"
+  | "TRN"
+  | "KRS"
+  | "SRT"
+  | "LOS"
+  | "EKV"
+  | "EKT";
 
 // список перелётов
-interface Segment {
+export interface Segment {
   id: string;
   // Код города откуда вылет
   origin: CityCodes;
@@ -30,7 +42,7 @@ interface Segment {
 }
 
 // компания
-interface Company {
+export interface Company {
   id: string;
   // Название компании
   name: string;
