@@ -1,0 +1,42 @@
+.buttonsBlock {
+  max-height: 50px;
+  button {
+    cursor: pointer;
+    height: 50px;
+    width: 168px;
+    border: none;
+    color: #4a4a4a;
+
+    background: #ffffff;
+
+    box-shadow: 0 0 0 1px #dfe5ec;
+    box-sizing: border-box;
+    transition: 0.3s ease-in;
+    text-transform: uppercase;
+
+    &.active {
+      background: #2196f3;
+      color: white;
+
+      &:hover {
+        background: #2196f3;
+        color: white;
+      }
+    }
+
+    &:first-child {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+    &:hover {
+      background: #f1fcff;
+      color: #4a4a4a;
+    }
+  }
+}
