@@ -9,6 +9,19 @@ export const TicketsList = () => {
 
   const [tickets, setTickets] = useState(allTickets);
 
+  const getSegment = (id) => segments.find((segment) => segment.id === id);
+  const getTicketDuration = (ticket) =>
+    ticket.segments.reduce((acc, currSegment) => {
+      const segment = getSegment(currSegment);
+      return (
+        acc +
+        new Date(segment.duration).getMinutes() +
+        new Date(segment.duration).getHours() * 60
+      );
+    }, 0);
+
+  const getTicketSegmentsCount = (ticket) => ticket.segments.length;
+
   const isTransferFilterAvalible =
     filters.transferFilter.length !== 0 && !filters.transferFilter.includes("");
 
@@ -26,15 +39,27 @@ export const TicketsList = () => {
           return (
             +transfer ===
             ticket.segments.reduce((acc, currSegmentId) => {
-              const segment = segments.find(
-                (segment) => segment.id === currSegmentId
-              );
+              const segment = getSegment(currSegmentId);
               return acc + segment.stops.length;
             }, 0)
           );
         })
       );
 
+    if (filters.mostFilter)
+      switch (filters.mostFilter) {
+        case "chip":
+          sortedTickets = [...sortedTickets].sort((a, b) => a.price - b.price);
+          break;
+        case "fast":
+          sortedTickets = [...sortedTickets].sort(
+            (a, b) => getTicketDuration(a) - getTicketDuration(b)
+          );
+        case "short":
+          sortedTickets = [...sortedTickets].sort(
+            (a, b) => getTicketSegmentsCount(a) - getTicketSegmentsCount(b)
+          );
+      }
     setTickets(sortedTickets);
   }, [filters]);
   return (
