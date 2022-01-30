@@ -1,8 +1,8 @@
 import { PlainIcon } from "../../assets/icons";
-import { CompainFilter } from "../CompainFilter";
-import { CostFilter } from "../CostFilter";
-import { TicketsList } from "../Tickets";
-import { TransferFilter } from "../TransferFilter";
+import { CompainFilter } from "../../components/CompainFilter";
+import { CostFilter } from "../../components/CostFilter";
+import { TicketsList } from "../../components/Tickets";
+import { TransferFilter } from "../../components/TransferFilter";
 import style from "./style.module.scss";
 
 export const MainPage = () => {
