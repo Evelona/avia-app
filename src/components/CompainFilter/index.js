@@ -1,5 +1,5 @@
 import style from "./style.module.scss";
-import { setcompainFilterValue } from "../../store/compainFilter";
+import { setCompainFilterValue } from "../../store/filters";
 import { useDispatch, useSelector } from "react-redux";
 
 export const CompainFilter = () => {
@@ -8,8 +8,7 @@ export const CompainFilter = () => {
   const onChange = ({ target: { value } }) => {
     const currCompainId =
       compains.find((compains) => compains.name === value)?.id || "";
-    console.log(currCompainId);
-    dispatch(setcompainFilterValue(currCompainId));
+    dispatch(setCompainFilterValue(currCompainId));
   };
   return (
     <div className={style.block}>
@@ -19,7 +18,7 @@ export const CompainFilter = () => {
         <input
           name="all"
           type="radio"
-          value={"all"}
+          value={""}
           className={style.radio__input}
         />
         <span className={style.radio__box}></span>
