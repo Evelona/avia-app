@@ -25,6 +25,9 @@ export const compainFilterSlice = createSlice({
         (value) => value !== action.payload
       );
     },
+    setMostFilterValue: (state, action) => {
+      state.mostFilter = action.payload;
+    },
   },
 });
 
@@ -32,6 +35,7 @@ export const {
   setCompainFilterValue,
   addTransferFilterValue,
   removeTransferFilterValue,
+  setMostFilterValue,
 } = compainFilterSlice.actions;
 
 export default compainFilterSlice.reducer;
