@@ -1,0 +1,29 @@
+.page {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  & svg {
+    margin: 0 auto 50px;
+  }
+
+  & .container {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+  }
+
+  & .content {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  & .filters {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

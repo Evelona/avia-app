@@ -1,0 +1,29 @@
+.buttonsBlock {
+  max-height: 50px;
+  button {
+    cursor: pointer;
+    height: 50px;
+    width: 168px;
+    border: none;
+
+    background: #ffffff;
+
+    box-shadow: 0 0 0 1px #dfe5ec;
+    box-sizing: border-box;
+    transition: 0.3s ease-in;
+
+    &:first-child {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+    &:hover {
+      background: #f1fcff;
+    }
+  }
+}
