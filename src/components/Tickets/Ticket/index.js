@@ -8,7 +8,7 @@ export const Ticket = ({ ticket }) => {
   return (
     <div className={style.ticket}>
       <div className={style.ticket__header}>
-        <p className={style.price}>{price}</p>
+        <p className={style.price}>{price} Р</p>
         <div className={style.compainLogo}>
           <CompainLogo id={companyId} />
         </div>
